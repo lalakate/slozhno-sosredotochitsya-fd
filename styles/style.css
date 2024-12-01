@@ -1,5 +1,438 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: 'IBM Plex mono';
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "menu"
+    "title"
+    "description";
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+  margin-top: 11px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-transform: lowercase;
+  padding: 1.5px 13px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 18px;
+  position: relative;
+  color: var(--header-elements-color);
+}
+
+.header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+  border: 1px solid rgba(53, 52, 48, 0.4);
+}
+
+.header__theme-menu-button:not(.header__theme-menu-button_active):focus {
+  border: 1px solid transparent;
+  text-decoration: none;
+  outline: none;
+}
+
+.header__theme-menu-button:not(.header__theme-menu-button_active):focus::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--header-elements-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--header-elements-color);
+  pointer-events: none;
+}
+
+.header__theme-menu {
+  grid-area: menu;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.rec {
+  color: var(--rec-color);
+  display: flex;
+  position: absolute;
+  justify-self: flex-end;
+  top: 24px;
+  right: 47px;
+  max-height: 26px;
+}
+
+.rec::after {
+  content: '';
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  background-color: var(--rec-color);
+  border-radius: 50%;
+  grid-area: menu;
+  display: flex;
+  align-self: flex-start;
+  top: 5px;
+  left: 38px;
+  box-shadow: 0 0 4px 2px var(--rec-color);
+}
+
+.header-title {
+  font-size: var(--desktop-header-font-size);
+  grid-area: title;
+  font-weight: 700;
+  color: var(--title-color);
+  text-shadow: 4px 4px var(--shadow-color);
+  justify-self: start;
+  align-self: center;
+  margin: 0;
+}
+
+.header-description {
+  grid-area: description;
+  background-color: var(--accent-color);
+  color: var(--header-text-color);
+  max-width: 491px;
+  justify-self: end;
+  height: 71px;
+  margin: 50px 20px 134px 0;
+}
+
+.header-text {
+  color: var(--header-text-color);
+  font-size: 18px;
+  font-weight: 700; 
+  line-height: 23.4px;
+}
+
+.half-quater {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+}
+
+.half-quater-right {
+  grid-area: menu;
+  border-right: 1px solid var(--header-elements-color);
+  border-top: 1px solid var(--header-elements-color);
+  justify-self: end;
+  margin: 20px 20px 0 0;
+}
+
+.half-quater-left {
+  grid-area: description;
+  border-left: 1px solid var(--header-elements-color);
+  border-bottom: 1px solid var(--header-elements-color);
+  justify-self: start;
+  align-self: flex-end;
+  margin: 0 0 20px 20px;
+}
+
+.articles {
+  display: grid;
+  gap: 80px;
+  padding: 0 20px 0 20px;
+  margin: 60px 0 80px 0;
+}
+
+.why {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.title {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.solutions {
+  display: grid;
+  gap: 20px;
+}
+
+.solution {
+  display: grid;
+  gap: 10px;
+}
+
+.subtitle {
+  color: var(--header-text-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  background-color: var(--accent-color);
+}
+
+.article-text {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.what {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.what-title {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.what-solutions {
+  grid-area: 2 / 1 / 3 / 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.advices {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(6, auto);
+}
+
+.advice {
+  display: grid;
+  gap: 10px;
+}
+
+.advice-solutions {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  gap: 20px;
+}
+
+.advice-title {
+  font-weight: 400;
+}
+
+.galery {
+  box-sizing: border-box;
+  display: grid;
+  padding: 0 20px 0 20px;
+  gap: 20px;
+  max-width: 100vw;
+  margin: 0 0 60px 0;
+}
+
+.images {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1.5fr;
+  grid-template-areas: 
+  "sunset sunset ice-cream"
+  "tape books ice-cream"
+  "tape street street";
+  gap: 20px;
+  width: 100%;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sunset {
+  grid-area: sunset;
+}
+
+.ice-cream {
+  grid-area: ice-cream;
+}
+
+.tape {
+  grid-area: tape;
+}
+
+.books {
+  grid-area: books;
+}
+
+.street {
+  grid-area: street;
+}
+
+.footer {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  box-sizing: border-box;
+}
+
+.footer-text {
+  font-size: var(--desktop-header-font-size);
+  font-weight: 700;
+  color: var(--title-color);
+  text-shadow: 2px 2px var(--shadow-color);
+  justify-self: center;
+  align-self: center;
+  grid-area: 2 / 1 / 3;
+}
+
+.word-link {
+  text-decoration: none;
+  text-shadow: 3px 3px var(--accent-color);
+  position: relative;
+  padding: -1px 1px;
+}
+
+.word-link:hover {
+  text-decoration: none;
+}
+
+.word-link:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-color);
+  box-shadow: none;
+}
+
+.word-link:focus {
+  outline: none;
+  border: 1px solid var(--text-color);
+}
+
+@media (375px < width <= 768px) {
+  .header__theme-menu{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    margin-top: 39px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 11px;
+  }
+
+  .header-title {
+    line-height: 99px;
+  }
+
+  .header-description {
+    max-width: 364px;
+    height: 117px;
+    margin: 50px 20px 134px 0;
+  }
+
+  .h2.title {
+    max-width: 236px;
+    max-height: 71px;
+  }
+
+  .what-solutions{
+    grid-template-columns: none;
+  }
+}
+
+@media (width <= 375px) {
+  .header {
+    grid-template-rows: 1fr 1fr auto;
+  }
+
+  .header__theme-menu{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 11px;
+  }
+
+  .header-title {
+    font-size: var(--mobile-header-font-size);
+    max-height: 192px;
+    line-height: 95.7px;
+  }
+
+  .header-description {
+    max-width: 355px;
+    max-height: 117px;
+    justify-self: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .header-text {
+    background-color: var(--accent-color);
+  }
+
+  .articles {
+    margin: 40px 0 50px 0;
+    padding: 0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .why {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .what {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .what-solutions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .advices {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .galery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }

@@ -3,10 +3,95 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+.theme_light {
+  --background-image: url('/images/cover-image-light.png');
+  --accent-color: #FF8DCB;
+  --shadow-color: #FF0070;
+  --text-color: #353430;
+  --title-color: #FFC2E6;
+  --header-elements-color: #353430;
+  --rec-color: transparent;
+  --header-text-color: #353430;
+}
 
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  background-image: var(--background-image);
+}
+
+.theme_light.header-description {
+  color: var(--text-color);
+}
+
+.theme_light.header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+  border: 1px solid rgba(53, 52, 48, 0.4);
+}
+
+.theme_light.header__theme-menu-button:not(.header__theme-menu-button_active):focus::after {
+  background-color: var(--header-elements-color);
+}
+
+.theme_light.header__theme-menu-button_active {
+  border: 1px solid var(--header-elements-color);
+}
+
+.theme_light.rec {
+  color: var(--rec-color);
+}
+
+.theme_light.rec::after {
+  background-color: var(--rec-color);
+  box-shadow: 0 0 4px 2px var(--rec-color);
+}
+
+.theme_light.header-title {
+  color: var(--title-color);
+  text-shadow: 4px 4px var(--shadow-color);
+}
+
+.theme_light.header-description {
+  background-color: var(--accent-color);
+}
+
+.theme_light.header-text {
+  color: var(--text-color);
+}
+
+.theme_light.half-quater-right {
+  border-right: 1px solid var(--header-elements-color);
+  border-top: 1px solid var(--header-elements-color);
+}
+
+.theme_light.half-quater-left {
+  border-left: 1px solid var(--header-elements-color);
+  border-bottom: 1px solid var(--header-elements-color);
+}
+
+.theme_light.title {
+  color: var(--text-color);
+}
+
+.theme_light.subtitle {
+  color: var(--text-color);
+  background-color: var(--accent-color);
+}
+
+.theme_light.article-text {
+  color: var(--text-color);
+}
+
+.theme_light.footer-text {
+  color: var(--title-color);
+  text-shadow: 2px 2px var(--shadow-color);
+}
+
+.theme_light.word-link {
+  text-shadow: 3px 3px var(--accent-color);
+}
+
+.theme_light.word-link:hover::after {
+  background-color: var(--text-color);
+}
+
+.theme_light.word-link:focus {
+  border: 1px solid var(--text-color);
 }
