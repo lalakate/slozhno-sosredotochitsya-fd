@@ -20,6 +20,7 @@
 
 .theme_light.header-description {
   color: var(--text-color);
+  background-color: var(--accent-color);
 }
 
 .theme_light.header__theme-menu-button:not(.header__theme-menu-button_active):hover {
@@ -46,10 +47,6 @@
 .theme_light.header-title {
   color: var(--title-color);
   text-shadow: 4px 4px var(--shadow-color);
-}
-
-.theme_light.header-description {
-  background-color: var(--accent-color);
 }
 
 .theme_light.header-text {
