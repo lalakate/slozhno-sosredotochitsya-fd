@@ -20,6 +20,7 @@
 
 .theme_dark.header-description {
   color: var(--header-text-color);
+  background-color: var(--accent-color);
 }
 
 .theme_dark.header__theme-menu-item {
@@ -50,10 +51,6 @@
 .theme_dark.header-title {
   color: var(--title-color);
   text-shadow: 4px 4px var(--shadow-color);
-}
-
-.theme_dark.header-description {
-  background-color: var(--header-text-color);
 }
 
 .theme_dark.header-text {
