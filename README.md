@@ -9,5 +9,5 @@ This project was created to consolidate the skills in the adaptive layout
 
 ## Project link
 ```bash
-https://github.com/lalakate/slozhno-sosredotochitsya.git
+https://github.com/lalakate/slozhno-sosredotochitsya-fd.git
 ```
