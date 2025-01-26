@@ -4,18 +4,22 @@
   переключая тему
 */
 .theme_light {
-  --background-image: url('/images/cover-image-light.png');
+  --background-image: url('../images/cover-image-light.png');
+  --background-color: #fff1f7;
   --accent-color: #FF8DCB;
   --shadow-color: #FF0070;
   --text-color: #353430;
+  --article-title-color: #353430;
   --title-color: #FFC2E6;
   --header-elements-color: #353430;
+  --header-elements-color-hover: rgba(53, 52, 48, 0.4);
   --rec-color: transparent;
   --header-text-color: #353430;
 }
 
 .page.theme_light {
   background-image: var(--background-image);
+  background-color: var(--background-color);
 }
 
 .theme_light.header-description {
@@ -24,7 +28,7 @@
 }
 
 .theme_light.header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-  border: 1px solid rgba(53, 52, 48, 0.4);
+  border: 1px solid var(--header-elements-color-hover);
 }
 
 .theme_light.header__theme-menu-button:not(.header__theme-menu-button_active):focus::after {
@@ -33,6 +37,10 @@
 
 .theme_light.header__theme-menu-button_active {
   border: 1px solid var(--header-elements-color);
+}
+
+.theme_light.theme_light.header__theme-menu-button {
+  color: var(--header-elements-color);
 }
 
 .theme_light.rec {
@@ -64,7 +72,7 @@
 }
 
 .theme_light.title {
-  color: var(--text-color);
+  color: var(--article-title-color);
 }
 
 .theme_light.subtitle {

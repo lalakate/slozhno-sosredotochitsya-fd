@@ -1,8 +1,9 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: 'IBM Plex mono';
+  font-family: 'IBM Plex mono', sans-serif;
   background-image: var(--background-image);
+  background-color: var(--background-color);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -11,6 +12,7 @@
 .header {
   position: relative;
   height: 100vh;
+  min-height: 668px;
   width: 100%;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -40,7 +42,7 @@
 }
 
 .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-  border: 1px solid rgba(53, 52, 48, 0.4);
+  border: 1px solid var(--header-elements-color-hover);
 }
 
 .header__theme-menu-button:not(.header__theme-menu-button_active):focus {
@@ -78,7 +80,6 @@
   justify-self: flex-end;
   top: 24px;
   right: 47px;
-  max-height: 26px;
 }
 
 .rec::after {
@@ -113,8 +114,7 @@
   color: var(--header-text-color);
   max-width: 491px;
   justify-self: end;
-  height: 71px;
-  margin: 50px 20px 134px 0;
+  margin: 50px 20px 190px 0;
 }
 
 .header-text {
@@ -131,20 +131,19 @@
 }
 
 .half-quater-right {
-  grid-area: menu;
+  position: absolute;
   border-right: 1px solid var(--header-elements-color);
   border-top: 1px solid var(--header-elements-color);
-  justify-self: end;
-  margin: 20px 20px 0 0;
+  top: 20px;
+  right: 20px;
 }
 
 .half-quater-left {
-  grid-area: description;
+  position: absolute;
   border-left: 1px solid var(--header-elements-color);
   border-bottom: 1px solid var(--header-elements-color);
-  justify-self: start;
-  align-self: flex-end;
-  margin: 0 0 20px 20px;
+  bottom: 20px;
+  left: 20px;
 }
 
 .articles {
@@ -154,13 +153,16 @@
   margin: 60px 0 80px 0;
 }
 
-.why {
+.section-description {
   display: grid;
+}
+
+.why {
   grid-template-columns: 1fr 2fr;
 }
 
 .title {
-  color: var(--text-color);
+  color: var(--article-title-color);
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
@@ -191,7 +193,6 @@
 }
 
 .what {
-  display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
@@ -209,7 +210,6 @@
 }
 
 .advices {
-  display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: repeat(6, auto);
 }
@@ -279,7 +279,9 @@
 }
 
 .footer {
+  position: relative;
   height: 100vh;
+  min-height: 668px;
   width: 100%;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -343,7 +345,6 @@
 
   .header-description {
     max-width: 364px;
-    height: 117px;
     margin: 50px 20px 134px 0;
   }
 
@@ -376,13 +377,11 @@
 
   .header-title {
     font-size: var(--mobile-header-font-size);
-    max-height: 192px;
     line-height: 95.7px;
   }
 
   .header-description {
     max-width: 355px;
-    max-height: 117px;
     justify-self: center;
     margin-left: 0;
     margin-right: 0;
@@ -400,14 +399,16 @@
     gap: 50px;
   }
 
-  .why {
+  .section-description {
     display: flex;
+  }
+
+  .why {
     flex-direction: column;
     gap: 20px;
   }
 
   .what {
-    display: flex;
     flex-direction: column;
     gap: 20px;
   }
@@ -418,7 +419,6 @@
   }
 
   .advices {
-    display: flex;
     flex-direction: column;
     gap: 20px;
   }

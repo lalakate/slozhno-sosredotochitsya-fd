@@ -4,18 +4,22 @@
   переключая тему
 */
 .theme_dark {
-  --background-image: url('/images/cover-image-dark.png');
+  --background-image: url('../images/cover-image-dark.png');
+  --background-color: #000028;
   --accent-color: #FF0070;
+  --article-title-color: #FF0070;
   --text-color: #F1B2CE;
   --title-color: #DB00FF;
   --header-text-color: #000028;
   --shadow-color: #FF0070;
   --header-elements-color: #FF0070;
+  --header-elements-color-hover: #FF0070;;
   --rec-color: #FF0070;
 }
 
 .page.theme_dark {
   background-image: var(--background-image);
+  background-color: var(--background-color);
 }
 
 .theme_dark.header-description {
@@ -28,7 +32,7 @@
 }
 
 .theme_dark.header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-  border: 1px solid #FF0070;
+  border: 1px solid var(--header-elements-color-hover);
 }
 
 .theme_dark.header__theme-menu-button:not(.header__theme-menu-button_active):focus::after {
@@ -68,7 +72,7 @@
 }
 
 .theme_dark.title {
-  color: var(--accent-color);
+  color: var(--article-title-color);
 }
 
 .theme_dark.subtitle {
@@ -99,11 +103,17 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background-image: url('/images/cover-image-dark.png');
+      --background-image: url('../images/cover-image-dark.png');
+      --background-color: #000028;
       --accent-color: #FF0070;
+      --article-title-color: #FF0070;
       --text-color: #F1B2CE;
       --title-color: #DB00FF;
       --header-text-color: #000028;
+      --shadow-color: #FF0070;
+      --header-elements-color: #FF0070;
+      --header-elements-color-hover: #FF0070;;
+      --rec-color: #FF0070;
     }
 
     .page {
@@ -115,11 +125,11 @@
     }
     
     .header__theme-menu-button {
-      color: var(--accent-color);
+      color: var(--header-elements-color);
     }
     
     .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-      border: 1px solid var(--accent-color);
+      border: 1px solid var(--header-elements-color-hover);
     }
 
     .header__theme-menu-button:not(.header__theme-menu-button_active):focus::after {
@@ -127,16 +137,16 @@
     }
     
     .header__theme-menu-button_active {
-      border: 1px solid var(--accent-color);
+      border: 1px solid var(--header-elements-color);
     }
 
     .rec {
-      color: var(--header-elements-color);
+      color: var(--rec-color);
     }
     
     .rec::after {
-      background-color: var(--header-elements-color);
-      box-shadow: 0 0 4px 2px var(--header-elements-color);
+      background-color: var(--rec-color);
+      box-shadow: 0 0 4px 2px var(--rec-color);
     }
     
     .header-title {
@@ -159,7 +169,7 @@
     }
     
     .title {
-      color: var(--accent-color);
+      color: var(--article-title-color);
     }
     
     .subtitle {

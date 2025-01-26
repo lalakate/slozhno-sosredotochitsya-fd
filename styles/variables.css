@@ -5,12 +5,15 @@
 :root {
   --mobile-header-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --desktop-header-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  --background-image: url('/images/cover-image-light.png');
+  --background-image: url('../images/cover-image-light.png');
+  --background-color: #fff1f7;
   --accent-color: #FF8DCB;
   --shadow-color: #FF0070;
   --text-color: #353430;
   --title-color: #FFC2E6;
+  --article-title-color: #353430;
   --header-elements-color: #353430;
+  --header-elements-color-hover: rgba(53, 52, 48, 0.4);
   --rec-color: transparent;
   --header-text-color: #353430;
 }
