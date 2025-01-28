@@ -3,7 +3,7 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-.theme_dark {
+.page.theme_dark {
   --background-image: url('../images/cover-image-dark.png');
   --background-color: #000028;
   --accent-color: #FF0070;
@@ -15,11 +15,6 @@
   --header-elements-color: #FF0070;
   --header-elements-color-hover: #FF0070;;
   --rec-color: #FF0070;
-}
-
-.page.theme_dark {
-  background-image: var(--background-image);
-  background-color: var(--background-color);
 }
 
 .theme_dark.header-description {
