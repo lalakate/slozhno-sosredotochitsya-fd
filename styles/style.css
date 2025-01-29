@@ -109,11 +109,7 @@
 
 .header-description {
   grid-area: description;
-  background-color: var(--accent-color);
-  color: var(--header-text-color);
   max-width: 491px;
-  max-height: 71px;
-  line-height: 23.4px;
   justify-self: end;
   margin: 50px 20px 0 0;
 }
@@ -123,6 +119,7 @@
   font-size: 18px;
   font-weight: 700; 
   line-height: 23.4px;
+  background-color: var(--accent-color);
 }
 
 .half-quater {
@@ -327,18 +324,18 @@
   border: 1px solid var(--text-color);
 }
 
-@media (375px < width <= 768px) {
+@media (500px < width <= 768px) {
   .header__theme-menu {
     display: flex;
     align-items: end;
     justify-content: end;
-    margin-top: 39px;
+    margin-top: px;
   }
 
   .header__theme-menu-list {
     display: flex;
     flex-direction: column;
-    margin-bottom: 11px;
+    margin-bottom: 45px;
   }
 
   .header-title {
@@ -347,12 +344,19 @@
 
   .header-description {
     max-width: 364px;
-    margin: 50px 20px 134px 0;
+    margin: 50px 20px 183px 0;
   }
 
   .h2.title {
     max-width: 236px;
-    max-height: 71px;
+  }
+
+  .solutions {
+    margin-left: 12px;
+  }
+
+  .advice-solutions {
+    margin-left: 12px;
   }
 
   .what-solutions {
@@ -360,7 +364,7 @@
   }
 }
 
-@media (width <= 375px) {
+@media (width <= 500px) {
   .header {
     grid-template-rows: 1fr 1fr auto;
   }
@@ -369,17 +373,22 @@
     display: flex;
     align-items: end;
     justify-content: end;
+    margin-left: 20px;
+    padding: 10px 10px;
   }
 
   .header__theme-menu-list {
     display: flex;
     flex-direction: column;
-    margin-bottom: 11px;
+    gap: 13px;
+    margin-bottom: 37px;
   }
 
   .header-title {
     font-size: var(--mobile-header-font-size);
     line-height: 95.7px;
+    margin-left: 11px;
+    margin-top: 16px;
   }
 
   .header-description {
@@ -387,10 +396,26 @@
     justify-self: center;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 65px;
   }
 
   .header-text {
     background-color: var(--accent-color);
+  }
+
+  .half-quater-right {
+    top: 10px;
+    right: 10px;
+  }
+
+  .half-quater-left {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .rec {
+    top: 13px;
+    right: 40px;
   }
 
   .articles {
@@ -399,6 +424,14 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+  }
+
+  .solutions {
+    margin: 0;
+  }
+
+  .advice-solutions {
+    margin: 0;
   }
 
   .section-description {
@@ -430,6 +463,8 @@
     flex-direction: column;
     gap: 10px;
     max-width: 100%;
+    padding: 0 10px;
+    margin-bottom: 40px;
   }
 
   .images {
