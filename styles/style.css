@@ -472,4 +472,8 @@
     flex-direction: column;
     gap: 10px;
   }
+
+  .footer-text {
+    letter-spacing: -2px;
+  }
 }
